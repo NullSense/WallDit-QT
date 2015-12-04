@@ -1,47 +1,48 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+*.save
+*.depend
+*.layout
+bin/
+obj/
+Run.lnk
+*.cbp
 
-# Folder config file
-Desktop.ini
+# Sublime Text Exceptions
+*.sublime-workspace
+*.sublime-project
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Precompiled Headers
+*.gch
+*.pch
 
-# Windows shortcuts
-*.lnk
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
 
-# =========================
-# Operating System Files
-# =========================
+# Fortran module files
+*.mod
 
-# OSX
-# =========================
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
 
-.DS_Store
-.AppleDouble
-.LSOverride
+# Executables
+*.exe
+*.out
+*.app
+*.cpython-35
 
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# Images
+*.png
+*.jpg
+*.bmp
+*.pyc
+*.gif
