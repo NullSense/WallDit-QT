@@ -11,9 +11,9 @@ A python program that sets your wallpaper as you choose (GUI version)
 
 # Setup:
 * download the praw module
-'''
+```
 pip download -U praw
-'''
+```
 
 # Launch:
 ```
