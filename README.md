@@ -5,7 +5,9 @@ A very lightweight python program that sets your wallpaper, taken from Reddit, b
 ![How it works](http://i.imgur.com/jfVSYvC.gif)
 
 # Plans (Ascending priority):
+* Make app standalone (no need for python and module downloads)
 * Saving wallpaper to another dir
+* Minimize and run in background
 * Timer to automatically change wallpaper
 * Launch on startup
 * Linux support
