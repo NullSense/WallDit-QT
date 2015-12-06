@@ -13,8 +13,8 @@ A very lightweight python program that sets your wallpaper, taken from Reddit, b
 # Setup:
 * download the modules
 ```
-pip download -U praw
-pip download -U pyside
+pip install praw
+pip install pyside
 ```
 
 # Launch:
