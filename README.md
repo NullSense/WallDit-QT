@@ -5,6 +5,7 @@ A python program that sets your wallpaper as you choose (GUI version)
 ![How it works](http://i.imgur.com/oZszzV3.gif)
 
 # Plans (Ascending priority):
+* Saving wallpaper to another dir
 * Timer to automatically change wallpaper
 * Launch on startup
 * Linux support

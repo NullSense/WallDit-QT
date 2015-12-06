@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'WallDit Qt.ui'
 #
-# Created: Sun Dec  6 00:12:03 2015
+# Created: Sun Dec  6 12:35:28 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -13,7 +13,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(341, 220)
+        MainWindow.resize(341, 241)
         font = QtGui.QFont()
         font.setUnderline(False)
         MainWindow.setFont(font)
@@ -42,7 +42,7 @@ class Ui_MainWindow(object):
         self.amount_label.setObjectName("amount_label")
         self.formLayout_6.setWidget(5, QtGui.QFormLayout.LabelRole, self.amount_label)
         self.post_amount_spinbox = QtGui.QSpinBox(MainWindow)
-        self.post_amount_spinbox.setProperty("value", 15)
+        self.post_amount_spinbox.setProperty("value", 10)
         self.post_amount_spinbox.setObjectName("post_amount_spinbox")
         self.formLayout_6.setWidget(5, QtGui.QFormLayout.FieldRole, self.post_amount_spinbox)
         self.post_type_label = QtGui.QLabel(MainWindow)

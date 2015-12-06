@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>341</width>
-    <height>220</height>
+    <height>241</height>
    </rect>
   </property>
   <property name="font">
@@ -80,7 +80,7 @@
           <string>Dictates how many posts it looks for before stopping</string>
          </property>
          <property name="value">
-          <number>15</number>
+          <number>10</number>
          </property>
         </widget>
        </item>

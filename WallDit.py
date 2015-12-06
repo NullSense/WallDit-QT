@@ -8,6 +8,8 @@ from WallDit_QT import *
 
 # All hope is lost, abandon now
 
+counter = 0
+
 user_agent = "windows/linux:WallDit:v1 (by /u/FilthyPeasantt)"
 r = praw.Reddit(user_agent = user_agent)
 
@@ -23,17 +25,23 @@ def get_post_type(window):
     return type_input
 
 # Checks if the submission fits the specified parameters
-def is_ok_submission_url(window, submission):
+def is_ok_submission_url(window, submission, link_search_limit):
     suffixes = ['.gif', '.gifv', '.com']
-    dont_include = {'/a/', '/gallery/', 'gfy', 'deviantart', 'reddit'}
+    dont_include = {'/a/', '/gallery/', 'gfy', 'deviantart', 'reddit', 'artstation'}
     url = submission.url
-
+    global counter
     if any(term in url for term in dont_include) or url.endswith(tuple(suffixes)) or not url:
         print("\n\nSubmission ERROR: image a(n) album/gif, from deviantart or empty.")
+        counter = counter +1
+        print("counter:" + str(counter))
         return False
     if submission.over_18 and window.handle_nsfw_checkbox() == False:
         print("Submission is over 18 and NSFW is unchecked.")
+        counter = counter +1
+        print("counter:" + str(counter))
         return False
+    if counter == link_search_limit:
+        window.handle_status_label("Error: Submission are all invalid, up the counter or try again")
     else:
         print("Submission: no errors.\n\n")
         return True
@@ -54,9 +62,9 @@ def get_link(window):
     for submission in getattr(subreddit, post_types[p_type])(limit = link_search_limit):
         if "." not in submission.title: 
             print("\nKarma: {submission}\nNSFW: {submission.over_18}".format(submission=submission))
-            window.handle_status_label("\nKarma: {submission}\nNSFW: {submission.over_18}".format(submission=submission))
-        if is_ok_submission_url(window, submission):
+        if is_ok_submission_url(window, submission, link_search_limit):
             window.handle_progress_bar(25)
+            window.handle_status_label("\nKarma: {submission}\nNSFW: {submission.over_18}".format(submission=submission))
             return submission.url
 
 # Downloads image
@@ -73,7 +81,7 @@ def get_image_download(window):
     del response
     return url
 
-# Checks for internet connectivity
+# Checks for internet connectivity finish this shit when u wake up
 def check_connectivity(window):
     window.handle_status_label("Checking internet connection")
     try: 
