@@ -11,9 +11,10 @@ A very lightweight python program that sets your wallpaper, taken from Reddit, b
 * Linux support
 
 # Setup:
-* download the praw module
+* download the modules
 ```
 pip download -U praw
+pip download -U pyside
 ```
 
 # Launch:
