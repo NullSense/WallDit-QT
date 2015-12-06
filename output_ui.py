@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'WallDit Qt.ui'
 #
-# Created: Thu Dec  3 22:06:21 2015
+# Created: Sun Dec  6 00:12:03 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -80,6 +80,14 @@ class Ui_MainWindow(object):
         self.nsfw_checkbox.setObjectName("nsfw_checkbox")
         self.formLayout_6.setWidget(3, QtGui.QFormLayout.FieldRole, self.nsfw_checkbox)
         self.verticalLayout_3.addLayout(self.formLayout_6)
+        self.status_label = QtGui.QLabel(MainWindow)
+        self.status_label.setFrameShape(QtGui.QFrame.StyledPanel)
+        self.status_label.setFrameShadow(QtGui.QFrame.Plain)
+        self.status_label.setLineWidth(1)
+        self.status_label.setScaledContents(False)
+        self.status_label.setWordWrap(True)
+        self.status_label.setObjectName("status_label")
+        self.verticalLayout_3.addWidget(self.status_label)
         self.progressBar = QtGui.QProgressBar(MainWindow)
         font = QtGui.QFont()
         font.setWeight(75)
@@ -103,9 +111,9 @@ class Ui_MainWindow(object):
         self.subreddit_line.setToolTip(QtGui.QApplication.translate("MainWindow", "You can use multireddits (add a + between each subreddit)", None, QtGui.QApplication.UnicodeUTF8))
         self.subreddit_line.setText(QtGui.QApplication.translate("MainWindow", "Wallpaper+Wallpapers", None, QtGui.QApplication.UnicodeUTF8))
         self.amount_label.setToolTip(QtGui.QApplication.translate("MainWindow", "Dictates how many posts it looks for before stopping", None, QtGui.QApplication.UnicodeUTF8))
-        self.amount_label.setText(QtGui.QApplication.translate("MainWindow", "Amount of posts to look for ", None, QtGui.QApplication.UnicodeUTF8))
+        self.amount_label.setText(QtGui.QApplication.translate("MainWindow", "Amount of posts to look for:", None, QtGui.QApplication.UnicodeUTF8))
         self.post_amount_spinbox.setToolTip(QtGui.QApplication.translate("MainWindow", "Dictates how many posts it looks for before stopping", None, QtGui.QApplication.UnicodeUTF8))
-        self.post_type_label.setText(QtGui.QApplication.translate("MainWindow", "Which posts to fetch", None, QtGui.QApplication.UnicodeUTF8))
+        self.post_type_label.setText(QtGui.QApplication.translate("MainWindow", "Which posts to fetch:", None, QtGui.QApplication.UnicodeUTF8))
         self.post_type_combo_box.setItemText(0, QtGui.QApplication.translate("MainWindow", "Hot", None, QtGui.QApplication.UnicodeUTF8))
         self.post_type_combo_box.setItemText(1, QtGui.QApplication.translate("MainWindow", "Top this Hour", None, QtGui.QApplication.UnicodeUTF8))
         self.post_type_combo_box.setItemText(2, QtGui.QApplication.translate("MainWindow", "Top this Day", None, QtGui.QApplication.UnicodeUTF8))
@@ -117,5 +125,6 @@ class Ui_MainWindow(object):
         self.boot_checkbox.setText(QtGui.QApplication.translate("MainWindow", "Start on boot", None, QtGui.QApplication.UnicodeUTF8))
         self.nsfw_checkbox.setToolTip(QtGui.QApplication.translate("MainWindow", "Toggle to enable searching for NSFW links", None, QtGui.QApplication.UnicodeUTF8))
         self.nsfw_checkbox.setText(QtGui.QApplication.translate("MainWindow", "NSFW", None, QtGui.QApplication.UnicodeUTF8))
+        self.status_label.setText(QtGui.QApplication.translate("MainWindow", "Status:", None, QtGui.QApplication.UnicodeUTF8))
         self.start_btn.setText(QtGui.QApplication.translate("MainWindow", "Start", None, QtGui.QApplication.UnicodeUTF8))
 
