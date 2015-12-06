@@ -17,6 +17,15 @@ pip download -U praw
 ```
 
 # Launch:
+
+* Version with CMD for debugging purposes
+
 ```
 python WallDit.py
+```
+
+* No CMD version (.pyw)
+
+```
+python WallDit.pyw
 ```
