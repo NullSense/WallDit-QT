@@ -3,7 +3,6 @@ import requests
 import shutil
 import ctypes
 import os
-import time
 from WallDit_QT import *
 
 # All hope is lost, abandon now
