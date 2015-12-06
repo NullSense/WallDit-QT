@@ -1,8 +1,8 @@
 # WallDit
-A python program that sets your wallpaper as you choose (GUI version)
+A very lightweight python program that sets your wallpaper, taken from Reddit, based on your set parameters (GUI version)
 
-# GIF:
-![How it works](http://i.imgur.com/oZszzV3.gif)
+# GIF (.pyw no CMD version):
+![How it works](http://i.imgur.com/jfVSYvC.gif)
 
 # Plans (Ascending priority):
 * Saving wallpaper to another dir
