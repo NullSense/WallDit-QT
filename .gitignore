@@ -48,5 +48,6 @@ Run.lnk
 *.gif
 
 setup.py
-
-dist
+cacert.pem
+build
+praw.ini

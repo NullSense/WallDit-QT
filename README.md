@@ -1,25 +1,27 @@
 # WallDit
-A very lightweight python program that sets your wallpaper, taken from Reddit, based on your set parameters (GUI version)
+A very lightweight python program that sets your wallpaper, of images taken from Reddit, based on your set parameters (GUI version)
 
-# GIF (.pyw no CMD version):
+## GIF ([Binary .exe is finally released!](https://github.com/MrCappuccino/WallDit-QT/releases)):
 ![How it works](http://i.imgur.com/jfVSYvC.gif)
 
-# Plans (Ascending priority):
-* Make app standalone (no need for python and module downloads)
+## Plans (Descending priority):
 * Saving wallpaper to another dir
 * Minimize and run in background
 * Timer to automatically change wallpaper
 * Launch on startup
-* Linux support
 
-# Setup:
+## [Binary released, just extract the compressed files and double click the .exe](https://github.com/MrCappuccino/WallDit-QT/releases)
+
+### If you want to contribute, feel free to do so, any help is appreciated!
+
+## Setup (If you wanna run it yourself):
 * download the modules
 ```
 pip install praw
 pip install pyside
 ```
 
-# Launch:
+## Launch:
 
 * Version with CMD for debugging purposes
 

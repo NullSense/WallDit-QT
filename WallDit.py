@@ -26,18 +26,14 @@ def get_post_type(window):
 # Checks if the submission fits the specified parameters
 def is_ok_submission_url(window, submission, link_search_limit):
     suffixes = ['.gif', '.gifv', '.com']
-    dont_include = {'/a/', '/gallery/', 'gfy', 'deviantart', 'reddit', 'artstation'}
+    dont_include = {'/a/', '/gallery/', 'gfy', 'deviantart', 'reddit', 'artstation', 'flickr'}
     url = submission.url
     global counter
     if any(term in url for term in dont_include) or url.endswith(tuple(suffixes)) or not url:
-        print("\n\nSubmission ERROR: image a(n) album/gif, from deviantart or empty.")
         counter = counter +1
-        print("counter:" + str(counter))
         return False
     if submission.over_18 and window.handle_nsfw_checkbox() == False:
-        print("Submission is over 18 and NSFW is unchecked.")
         counter = counter +1
-        print("counter:" + str(counter))
         return False
     if counter == link_search_limit:
         window.handle_status_label("Error: Submission are all invalid, up the counter or try again")
@@ -59,11 +55,8 @@ def get_link(window):
     post_types = ['get_hot', 'get_top_from_hour', 'get_top_from_day', 'get_top_from_week', 'get_top_from_month', 'get_top_from_year', 'get_top_from_all']
 
     for submission in getattr(subreddit, post_types[p_type])(limit = link_search_limit):
-        if "." not in submission.title: 
-            print("\nKarma: {submission}\nNSFW: {submission.over_18}".format(submission=submission))
         if is_ok_submission_url(window, submission, link_search_limit):
             window.handle_progress_bar(25)
-            window.handle_status_label("\nKarma: {submission}\nNSFW: {submission.over_18}".format(submission=submission))
             return submission.url
 
 # Downloads image
@@ -100,11 +93,9 @@ def set_wallpaper(window):
     path = os.path.join(cwd, "DownloadedImage.png")
     url = get_image_download(window)
     window.handle_progress_bar(30)
-    print("Setting image as desktop background...")
     window.handle_status_label("Setting image as desktop background...")
     if ctypes.windll.user32.SystemParametersInfoW(20, 0, path, 0): # Runs on magical pony farts, do not touch
         window.handle_progress_bar(30)
-        print("Desktop background set successfully.")
         window.handle_status_label("Desktop background set successfully.")
     else:
         print("\n\nUh uh... Something went wrong.\nSend an email to matas234@gmail.com or message me on reddit /u/FilthyPeasantt")
