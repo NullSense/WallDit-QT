@@ -32,10 +32,10 @@ def is_ok_submission_url(window, submission, link_search_limit):
     if any(term in url for term in dont_include) or url.endswith(tuple(suffixes)) or not url:
         counter = counter +1
         return False
-    if submission.over_18 and window.handle_nsfw_checkbox() == False:
+    elif submission.over_18 and window.handle_nsfw_checkbox() == False:
         counter = counter +1
         return False
-    if counter == link_search_limit:
+    elif counter == link_search_limit:
         window.handle_status_label("Error: Submission are all invalid, up the counter or try again")
     else:
         print("Submission: no errors.\n\n")

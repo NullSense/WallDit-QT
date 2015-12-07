@@ -31,7 +31,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if self.nsfw_checkbox.isChecked():
             print("NSFW: checked")
             return True
-        if not self.nsfw_checkbox.isChecked():
+        else:
             print("NSFW: unchecked")
             return False
 
@@ -42,7 +42,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def handle_boot_checkbox(self): # when executable is released, gonna implement
         if self.boot_checkbox.isChecked():
             print("boot: checked")
-        if not self.boot_checkbox.isChecked():
+        else:
             print("boot: unchecked")
 
     def handle_subreddit_line(self):

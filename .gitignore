@@ -47,7 +47,6 @@ Run.lnk
 *.pyc
 *.gif
 
-setup.py
 cacert.pem
 build
 praw.ini
