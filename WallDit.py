@@ -107,9 +107,13 @@ def save_image(window):
 
     cwd = os.getcwd()
     path = os.path.join(cwd, image)
-    
+
+    path_to_folder = str(get_path_to_folder())
+
+    newstr = path_to_folder.replace("b", "")
+    nnewstr = newstr.replace("'", "")
     # Copies image to a dir
-    shutil.copyfile(path, get_path_to_folder())
+    shutil.copy(path, nnewstr)
 
 # Sets downloaded image as wallpaper
 def set_wallpaper(window):
