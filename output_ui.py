@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'WallDit Qt.ui'
 #
-# Created: Sun Dec  6 12:35:28 2015
+# Created: Tue Dec  8 13:15:33 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -13,7 +13,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(341, 241)
+        MainWindow.resize(341, 270)
         font = QtGui.QFont()
         font.setUnderline(False)
         MainWindow.setFont(font)
@@ -96,6 +96,9 @@ class Ui_MainWindow(object):
         self.progressBar.setProperty("value", 0)
         self.progressBar.setObjectName("progressBar")
         self.verticalLayout_3.addWidget(self.progressBar)
+        self.save_img_btn = QtGui.QPushButton(MainWindow)
+        self.save_img_btn.setObjectName("save_img_btn")
+        self.verticalLayout_3.addWidget(self.save_img_btn)
         self.start_btn = QtGui.QPushButton(MainWindow)
         self.start_btn.setObjectName("start_btn")
         self.verticalLayout_3.addWidget(self.start_btn)
@@ -103,6 +106,11 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        MainWindow.setTabOrder(self.subreddit_line, self.nsfw_checkbox)
+        MainWindow.setTabOrder(self.nsfw_checkbox, self.post_amount_spinbox)
+        MainWindow.setTabOrder(self.post_amount_spinbox, self.post_type_combo_box)
+        MainWindow.setTabOrder(self.post_type_combo_box, self.boot_checkbox)
+        MainWindow.setTabOrder(self.boot_checkbox, self.start_btn)
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "WallDit by Disco Dolan", None, QtGui.QApplication.UnicodeUTF8))
@@ -126,5 +134,6 @@ class Ui_MainWindow(object):
         self.nsfw_checkbox.setToolTip(QtGui.QApplication.translate("MainWindow", "Toggle to enable searching for NSFW links", None, QtGui.QApplication.UnicodeUTF8))
         self.nsfw_checkbox.setText(QtGui.QApplication.translate("MainWindow", "NSFW", None, QtGui.QApplication.UnicodeUTF8))
         self.status_label.setText(QtGui.QApplication.translate("MainWindow", "Status:", None, QtGui.QApplication.UnicodeUTF8))
+        self.save_img_btn.setText(QtGui.QApplication.translate("MainWindow", "Save image to directory", None, QtGui.QApplication.UnicodeUTF8))
         self.start_btn.setText(QtGui.QApplication.translate("MainWindow", "Start", None, QtGui.QApplication.UnicodeUTF8))
 

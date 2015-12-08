@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>341</width>
-    <height>241</height>
+    <height>270</height>
    </rect>
   </property>
   <property name="font">
@@ -211,6 +211,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="save_img_btn">
+       <property name="text">
+        <string>Save image to directory</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="start_btn">
        <property name="text">
         <string>Start</string>
@@ -221,6 +228,14 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>subreddit_line</tabstop>
+  <tabstop>nsfw_checkbox</tabstop>
+  <tabstop>post_amount_spinbox</tabstop>
+  <tabstop>post_type_combo_box</tabstop>
+  <tabstop>boot_checkbox</tabstop>
+  <tabstop>start_btn</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

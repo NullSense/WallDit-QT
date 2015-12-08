@@ -2,12 +2,15 @@ import praw
 import requests
 import shutil
 import ctypes
+import ctypes.wintypes
 import os
+import time
+from win32com.shell import shell, shellcon
 from WallDit_QT import *
 
 # All hope is lost, abandon now
 
-counter = 0
+counter = 0 # Counter for checking how many posts that don't fit parameters were skipped
 
 user_agent = "windows/linux:WallDit:v1 (by /u/FilthyPeasantt)"
 r = praw.Reddit(user_agent = user_agent)
@@ -38,10 +41,9 @@ def is_ok_submission_url(window, submission, link_search_limit):
     elif counter == link_search_limit:
         window.handle_status_label("Error: Submission are all invalid, up the counter or try again")
     else:
-        print("Submission: no errors.\n\n")
         return True
 
-# Grabs link
+# Gets links that meet the specified parameter requirements
 def get_link(window):
     link_search_limit = window.handle_post_spinbox() # how many links it's gonna search for images that fit the criteria till it gives up and dies in a fire
 
@@ -60,7 +62,7 @@ def get_link(window):
             return submission.url
 
 # Downloads image
-def get_image_download(window):
+def get_image_download(window, image_name):
     url = get_link(window)
     window.handle_status_label("Downloading image")
 
@@ -68,7 +70,8 @@ def get_image_download(window):
         url += ".png"
 
     response = requests.get(url, stream=True)
-    with open('DownloadedImage.png', 'wb') as out_file:
+
+    with open(image_name, 'wb') as out_file:
         shutil.copyfileobj(response.raw, out_file)
     del response
     return url
@@ -87,14 +90,37 @@ def check_connectivity(window):
         window.handle_status_label("No internet connection is available")
         return False
 
+# Seriously, don't ask, yet another windows function
+def get_path_to_folder():
+    desktop_pidl = shell.SHGetFolderLocation (0, shellcon.CSIDL_DESKTOP, 0, 0)
+    pidl, display_name, image_list = shell.SHBrowseForFolder (0, desktop_pidl, "Choose a folder", 0, None, None)
+
+    return shell.SHGetPathFromIDList(pidl)
+
+def save_image(window):
+    date = time.strftime("%Y-%d-%m-%H-%M")
+    image_ext = ".png"
+    image = "DownloadedImage" + date + image_ext
+
+    # Adds the date and time to the downloaded image, before moving it to the Pictures directory
+    os.rename("DownloadedImage.png", image)
+
+    cwd = os.getcwd()
+    path = os.path.join(cwd, image)
+    
+    # Copies image to a dir
+    shutil.copyfile(path, get_path_to_folder())
+
 # Sets downloaded image as wallpaper
 def set_wallpaper(window):
     cwd = os.getcwd()
-    path = os.path.join(cwd, "DownloadedImage.png")
-    url = get_image_download(window)
+    
+    image_name = "DownloadedImage.png"
+    path = os.path.join(cwd, image_name)
+    url = get_image_download(window, image_name)
     window.handle_progress_bar(30)
     window.handle_status_label("Setting image as desktop background...")
-    if ctypes.windll.user32.SystemParametersInfoW(20, 0, path, 0): # Runs on magical pony farts, do not touch
+    if ctypes.windll.user32.SystemParametersInfoW(20, 0, path, 0): # Runs on magic, do not touch
         window.handle_progress_bar(30)
         window.handle_status_label("Desktop background set successfully.")
     else:
