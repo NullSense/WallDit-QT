@@ -1,11 +1,10 @@
 # WallDit
 A very lightweight python program that sets your wallpaper, of images taken from Reddit, based on your set parameters (GUI version)
 
-## GIF ([Binary .exe is finally released!](https://github.com/MrCappuccino/WallDit-QT/releases)):
+## GIF ([A bit outdated, saving button added](https://github.com/MrCappuccino/WallDit-QT/releases)):
 ![How it works](http://i.imgur.com/jfVSYvC.gif)
 
 ## Plans (Descending priority):
-* Saving wallpaper to another dir
 * Minimize and run in background
 * Timer to automatically change wallpaper
 * Launch on startup
