@@ -5,10 +5,8 @@ A very lightweight python program that sets your wallpaper, of images taken from
 ![How it works](https://i.imgur.com/7HKFgZW.gif)
 
 ## Plans (Descending priority):
-* Saving wallpaper to another dir
 * Minimize and run in background
 * Timer to automatically change wallpaper
-* Launch on startup
 
 ## [Binary released, just extract the compressed files and double click the .exe](https://github.com/MrCappuccino/WallDit-QT/releases)
 
